@@ -31,4 +31,9 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+void pall(stack_t **h, unsigned int n);
+void execute(instruction_t *instructions, char *opcode, stack_t **stack, unsigned int n);
+char* lineprocessor(char *line);
+void push(stack_t **head, unsigned int n);
+int getcode(char *line, instruction_t *instructions, stack_t **h);
 #endif
