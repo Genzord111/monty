@@ -18,7 +18,7 @@ void pint(stack_t **h, unsigned int n)
 
 	if (current != NULL)
 	{
-		printf("%d\n", current->n);
+		fprintf(stdout, "%d\n", current->n);
 	}
 	else
 	{
