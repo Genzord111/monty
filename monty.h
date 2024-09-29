@@ -35,5 +35,6 @@ void pall(stack_t **h, unsigned int n);
 void execute(instruction_t *instructions, char *opcode, stack_t **stack, unsigned int n);
 char* lineprocessor(char *line);
 void push(stack_t **head, unsigned int n);
-int getcode(char *line, instruction_t *instructions, stack_t **h);
+int getcode(char *line, unsigned int line_number, instruction_t *instructions, stack_t **stack);
+void parse_line(char *line, unsigned int line_number, instruction_t *instructions, stack_t **h);
 #endif

@@ -13,6 +13,7 @@ int main(int argc, char *argv[])
 {
 	stack_t *head = NULL;
 	int isEmpty = 1;
+	unsigned int line_number = 0;
 
 	instruction_t instructions[] = {
 		{"push", push},
@@ -38,8 +39,12 @@ int main(int argc, char *argv[])
 
 	while (fgets(fileContent, sizeof(fileContent), fileptr))
 	{
-		isEmpty = 0;
-		getcode(lineprocessor(fileContent), instructions, &head);
+	        line_number++; /* Increment line number */
+		if (fileContent[0] != '\n') /* Ignore blank lines */
+		{
+            		getcode(fileContent, line_number, instructions, &head);
+        	}
+        	isEmpty = 0;
 	}
 
 	if (isEmpty == 1)
